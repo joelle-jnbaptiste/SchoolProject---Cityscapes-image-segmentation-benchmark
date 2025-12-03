@@ -1,0 +1,11 @@
+fastapi
+uvicorn
+torch
+torchvision
+transformers
+accelerate
+numpy
+pillow
+opencv-python-headless
+python-multipart
+starlette

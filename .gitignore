@@ -1,0 +1,51 @@
+# ---- ENVIRONNEMENT ----
+venv/
+.env/
+.env*/
+*/venv/
+*/.env/
+
+# ---- PYTHON ----
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.egg-info/
+*.egg
+
+# ---- MLflow ----
+mlruns/
+*/mlruns/
+**/mlruns/
+
+# ---- MODELS BACKEND ----
+POC_backend/model/
+*/model/
+
+# ---- NOTEBOOK CHECKPOINTS ----
+.ipynb_checkpoints/
+
+# ---- LOGS ----
+*.log
+
+# ---- OS / ÉDITEURS ----
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
+
+# ---- STREAMLIT / CACHE ----
+**/.streamlit/
+**/streamlit_cache/
+
+# ---- IMAGES TEMP ----
+*.png
+*.jpg
+*.jpeg
+
+!POC_frontend/img/
+
+# ---- OTHER ----
+*.bak
+*.tmp
