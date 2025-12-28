@@ -1,214 +1,212 @@
-[![Stars][stars-shield]][stars-url]
-[![Issues][issues-shield]][issues-url]
-[![License][license-shield]][license-url]
-[![LinkedIn][linkedin-shield]][linkedin-url]
+<p align="center">
+  <img src="https://img.shields.io/github/license/joelle-jnbaptiste/SchoolProject---Cityscapes-image-segmentation-benchmark?style=for-the-badge" />
+  <img src="https://img.shields.io/badge/School%20Project-ML%20%26%20Data-blueviolet?style=for-the-badge" />
+</p>
 
----
+<h1 align="center">✨ Cityscapes Image Segmentation Benchmark ✨</h1>
 
 <div align="center">
+  <em>
+     Benchmarking machine perception for urban environments
+  </em>
+</br>
 
-# 🏰✨ SchoolProject — Cityscapes Image Segmentation Benchmark ✨🏰
+ <b>
+   End-to-end semantic image segmentation benchmark for autonomous driving
+ </b>
+</br>
+</br>
+🗃️ <b>Dataset</b>  
 
-🧙‍♂️ *An end-to-end semantic segmentation benchmark crafted like a grimoire,  
-from raw urban scenes to deployed inference spells.*
-
-⚔️ **School Project — Machine Learning & Computer Vision Engineering**
-
-🗺️ **Dataset**  
-👉 https://www.cityscapes-dataset.com/dataset-overview/
-
+      https://www.cityscapes-dataset.com/dataset-overview/
+  
 </div>
 
 ---
 
-## 📜 About the Project
-
-🧠 Autonomous driving systems depend on **semantic segmentation** to perceive and understand complex urban environments: roads, vehicles, pedestrians, buildings, and more.
-
-This project is a **complete benchmark pipeline** built around the **Cityscapes dataset**, designed to compare:
-
-- 🏹 **CNN-based architectures** (DeepLabV3+)
-- 🧙‍♂️ **Transformer-based models** (Mask2Former / SegFormer-style)
-
-The objective is not only performance, but also **reproducibility, interpretability, and deployment-readiness**, following professional ML & MLOps standards.
-
-Covered end-to-end:
-
-- 🧹 Data preprocessing & class remapping  
-- 🏗️ Model training & evaluation  
-- 📊 Quantitative benchmarking (mIoU, loss, class-wise metrics)  
-- 🧪 Experiment tracking with MLflow  
-- 🏰 FastAPI inference backend  
-- 🔮 Streamlit web interface for visualization & comparison  
+<!-- TABLE OF CONTENTS -->
+<details>
+  <summary>🧭 Table of Contents</summary>
+  <ol>
+    <li>About The Project</li>
+    <li>Dataset</li>
+    <li>System Architecture</li>
+    <li>Models presentation</li>
+    <li>Model Evaluation</li>
+    <li>Repository Structure</li>
+    <li>Getting Started</li>
+    <li>License</li>
+    <li>Contact</li>
+  </ol>
+</details>
 
 ---
 
-## 🛠️✨ Built With
+### ✨ Built With
 
-<div align="center">
+[![Python][Python-shield]][Python-url]
+[![Jupyter][Jupyter-shield]][Jupyter-url]
+[![Pandas][Pandas-shield]][Pandas-url]
+[![NumPy][NumPy-shield]][NumPy-url]
+[![Matplotlib][Matplotlib-shield]][Matplotlib-url]
+[![Seaborn][Seaborn-shield]][Seaborn-url]
 
-![Python][python-shield]
-![PyTorch][pytorch-shield]
-![TensorFlow][tensorflow-shield]
-![FastAPI][fastapi-shield]
-![Streamlit][streamlit-shield]
-![Docker][docker-shield]
-
-</div>
-
-🧙‍♀️ *Each tool is a rune in the spellbook of this end-to-end system.*
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ---
 
-## 🗺️ Dataset
+## 🎯 About The Project
 
-📚 **Cityscapes** is a large-scale dataset dedicated to semantic understanding of urban street scenes, widely used in autonomous driving research.
+This project is an end-to-end semantic image segmentation benchmark based on the Cityscapes dataset.
 
-**Key characteristics:**
+It is designed to compare different deep learning approaches for urban scene understanding, from classical CNN-based architectures to more recent transformer-based models.
 
-- 🌆 5,000 finely annotated images  
-- 🏙️ 20,000 coarsely annotated images  
-- 🎯 Pixel-level semantic labels  
-- 🚗 Real-world driving scenarios  
-
-**Semantic classes used in this benchmark:**
-
-- Road  
-- Sidewalk  
-- Building  
-- Vehicle  
-- Pedestrian  
-- Vegetation  
-- Sky  
-- Background / Ignore  
-
-🔗 Official dataset page:  
-👉 https://www.cityscapes-dataset.com/dataset-overview/
+The project covers the full machine learning pipeline:
+- Data preparation and preprocessing
+- Model training and evaluation
+- Quantitative benchmarking
+- Inference via a FastAPI backend
+- Visualization through a Streamlit frontend
 
 ---
 
-## 🏗️ Project Structure
+## 🗃️ Dataset
 
-        SchoolProject---Cityscapes-image-segmentation-benchmark/
-        │
-        ├── back/ # 🏰 FastAPI inference backend
-        │ ├── main.py # API entrypoint
-        │ ├── requirements.txt # Backend dependencies
-        │ ├── install-app.sh # App setup script
-        │ └── install-conda.sh # Conda environment setup
-        │
-        ├── front/ # 🔮 Streamlit visualization app
-        │ ├── app.py # UI entrypoint
-        │ ├── metric_info.py # Metrics display helpers
-        │ └── requirements.txt # Frontend dependencies
-        │
-        ├── modelisation/ # 🧙 Model training & experiments
-        │ ├── notebooks (.ipynb) # Training & evaluation notebooks
-        │ ├── mlruns/ # MLflow experiment tracking
-        │ └── README.md # Modeling-specific documentation
-        │
-        ├── .gitignore
-        ├── .gitattributes
-        └── README.md # Project documentation
----
+The project uses the **Cityscapes** dataset, a large-scale benchmark dataset dedicated to semantic understanding of urban street scenes.
 
-## 🧪 Models Benchmarked
+Dataset overview:
 
-⚔️ **CNN-based Baseline**
+      https://www.cityscapes-dataset.com/dataset-overview/
 
-- DeepLabV3+ (ResNet backbone)
-- Strong spatial inductive bias
-- Efficient and stable baseline
-
-🧙‍♂️ **Transformer-based Model**
-
-- Mask2Former / SegFormer-style architecture
-- Global context modeling
-- Better handling of complex urban scenes
+The dataset provides:
+- High-resolution street images
+- Pixel-level semantic annotations
+- Real-world driving scenarios
 
 ---
 
-## 📊 Evaluation & Metrics
+## 🏰 System Architecture
 
-🔍 Models are evaluated using:
+The project follows a modular end-to-end architecture:
 
-- 📐 **Mean Intersection over Union (mIoU)**  
-- 📉 Training & validation loss  
-- 🧮 Class-wise IoU  
-- ⏱️ Inference latency  
-- 🖼️ Qualitative visual comparisons  
+- **Modelisation**: training, experimentation, and benchmarking notebooks
+- **Backend**: FastAPI inference service exposing segmentation predictions
+- **Frontend**: Streamlit web application for visualization and comparison
+- **Tracking**: MLflow for experiment reproducibility and metrics logging
 
-🧪 All experiments are logged with **MLflow** to ensure full traceability and reproducibility.
-
----
-
-## 🏰 Backend — FastAPI Inference API
-
-⚙️ A production-ready API providing semantic segmentation inference.
-
-**Features:**
-
-- Automatic image preprocessing  
-- Model loading & inference  
-- Post-processing (argmax + color mapping)  
-- PNG segmentation mask output  
-
-📜 Interactive documentation available via `/docs`.
+Each component is isolated to ensure clarity, maintainability, and reproducibility.
 
 ---
 
-## 🔮 Frontend — Streamlit Application
+## 🪄 Models presentation
 
-🧭 The Streamlit app allows users to:
+The benchmark includes multiple segmentation models, such as:
 
-- Upload street-scene images  
-- Visualize predicted segmentation masks  
-- Compare outputs from different models  
-- Inspect metrics interactively  
+- CNN-based architectures (baseline models)
+- Encoder-decoder segmentation networks
+- Transformer-based segmentation models
 
-Designed for **demonstration, comparison, and explainability**.
-
----
-
-## 🧙‍♀️ Reproducibility & MLOps
-
-- 📦 Environment isolation via `requirements.txt`  
-- 🧪 Experiment tracking with MLflow  
-- 🐳 Docker-ready architecture  
-- 📁 Clear separation between training, API, and UI  
+Each model is trained and evaluated under the same conditions to ensure fair comparison.
 
 ---
 
-## 📜 License
+## 👑 Model Evaluation
 
-🛡️ This project is intended for **educational and research purposes**.  
-You are free to reuse, adapt, and extend it for learning or demonstration.
+Models are evaluated using standard semantic segmentation metrics:
+
+- Mean Intersection over Union (mIoU)
+- Training and validation loss
+- Class-wise performance
+- Qualitative visual comparison of predicted masks
+
+All experiments and metrics are tracked using MLflow.
 
 ---
 
-✨ *May your gradients vanish not, and your mIoU rise ever higher.* ✨
+## 🗺️ Repository Structure
+
+    SchoolProject---Cityscapes-image-segmentation-benchmark/
+    ├── back/
+    │   ├── main.py                 # FastAPI inference backend
+    │   ├── model/                  # Trained / exported models
+    │   ├── requirements.txt
+    │   └── README.md
+    │
+    ├── front/
+    │   ├── app.py                  # Streamlit visualization app
+    │   ├── requirements.txt
+    │   └── README.md
+    │
+    ├── modelisation/
+    │   ├── notebooks/              # Training & evaluation notebooks
+    │   ├── mlruns/                 # MLflow experiment tracking
+    │   └── README.md
+    │
+    ├── .gitignore
+    ├── .gitattributes
+    └── README.md
 
 ---
 
-[stars-shield]: https://img.shields.io/github/stars/joelle-jnbaptiste/SchoolProject---Cityscapes-image-segmentation-benchmark?style=flat-square
-[stars-url]: https://github.com/joelle-jnbaptiste/SchoolProject---Cityscapes-image-segmentation-benchmark/stargazers
-[issues-shield]: https://img.shields.io/github/issues/joelle-jnbaptiste/SchoolProject---Cityscapes-image-segmentation-benchmark?style=flat-square
-[issues-url]: https://github.com/joelle-jnbaptiste/SchoolProject---Cityscapes-image-segmentation-benchmark/issues
-[license-shield]: https://img.shields.io/github/license/joelle-jnbaptiste/SchoolProject---Cityscapes-image-segmentation-benchmark?style=flat-square
-[license-url]: https://github.com/joelle-jnbaptiste/SchoolProject---Cityscapes-image-segmentation-benchmark/blob/main/LICENSE
-[linkedin-shield]: https://img.shields.io/badge/LinkedIn-Profile-blue?style=flat-square
-[linkedin-url]: https://www.linkedin.com/
+## ⚔️ Getting Started
 
-[python-shield]: https://img.shields.io/badge/Python-3.9%2B-3776AB?style=for-the-badge&logo=python&logoColor=white
-[pytorch-shield]: https://img.shields.io/badge/PyTorch-EE4C2C?style=for-the-badge&logo=pytorch&logoColor=white
-[tensorflow-shield]: https://img.shields.io/badge/TensorFlow-FF6F00?style=for-the-badge&logo=tensorflow&logoColor=white
-[fastapi-shield]: https://img.shields.io/badge/FastAPI-009688?style=for-the-badge&logo=fastapi&logoColor=white
-[streamlit-shield]: https://img.shields.io/badge/Streamlit-FF4B4B?style=for-the-badge&logo=streamlit&logoColor=white
-[docker-shield]: https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white
-[gha-shield]: https://img.shields.io/badge/GitHub_Actions-2088FF?style=for-the-badge&logo=github-actions&logoColor=white
+### 1. Clone the repository
 
+    git clone https://github.com/joelle-jnbaptiste/SchoolProject---Cityscapes-image-segmentation-benchmark.git
 
+### 2. Set up the backend
 
+    cd back
+    python -m venv env
+    source env/bin/activate
+    pip install -r requirements.txt
+    uvicorn main:app --reload
 
+### 3. Run the frontend
 
+    cd ../front
+    python -m venv env
+    source env/bin/activate
+    pip install -r requirements.txt
+    streamlit run app.py
 
+---
+
+## ✒️ License
+
+This project is intended for educational and research purposes.
+
+---
+
+## 🕊️ Contact
+
+Joëlle JEAN BAPTISTE  
+LinkedIn:
+
+      https://fr.linkedin.com/in/joëllejnbaptiste  
+
+Project Link:
+
+      https://github.com/joelle-jnbaptiste/SchoolProject---Cityscapes-image-segmentation-benchmark
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+---
+
+[Python-shield]: https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white
+[Python-url]: https://www.python.org/
+
+[Jupyter-shield]: https://img.shields.io/badge/Jupyter-F37626?style=for-the-badge&logo=jupyter&logoColor=white
+[Jupyter-url]: https://jupyter.org/
+
+[Pandas-shield]: https://img.shields.io/badge/Pandas-150458?style=for-the-badge&logo=pandas&logoColor=white
+[Pandas-url]: https://pandas.pydata.org/
+
+[NumPy-shield]: https://img.shields.io/badge/NumPy-013243?style=for-the-badge&logo=numpy&logoColor=white
+[NumPy-url]: https://numpy.org/
+
+[Matplotlib-shield]: https://img.shields.io/badge/Matplotlib-11557C?style=for-the-badge
+[Matplotlib-url]: https://matplotlib.org/
+
+[Seaborn-shield]: https://img.shields.io/badge/Seaborn-4C72B0?style=for-the-badge
+[Seaborn-url]: https://seaborn.pydata.org/
